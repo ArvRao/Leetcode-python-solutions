@@ -1,0 +1,31 @@
+Input: command = "G()(al)"
+Output: "Goal"
+Explanation: The Goal Parser interprets the command as follows:
+G -> G
+() -> o
+(al) -> al
+The final concatenated result is "Goal".
+Example 2:
+
+Input: command = "G()()()()(al)"
+Output: "Gooooal"
+Example 3:
+
+Input: command = "(al)G(al)()()G"
+Output: "alGalooG"
+ 
+
+Constraints:
+
+1 <= command.length <= 100
+command consists of "G", "()", and/or "(al)" in some order.
+
+
+class Solution:
+    def findAll(self, command):
+        return command.replace('()','o').replace('(al)','al')
+
+sol = Solution()
+print(sol.findAll('g()()(al)'))
+
+Output: gooal
