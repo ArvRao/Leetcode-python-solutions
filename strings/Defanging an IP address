@@ -1,0 +1,8 @@
+class Solution(object):
+    def defangIPaddr(self, address):
+        return(address.replace('.','[.]'))
+        
+sol = Solution()
+print(sol.defangIPaddr('1.1.1.1.1'))
+
+Solution: 1[.]1[.]1[.]1[.]1
