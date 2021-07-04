@@ -1,0 +1,40 @@
+Access items of dictionaries by referring to key in square brackets.
+get() method also gives same result.
+keys() gives all the keys of dict.
+values() gives all values of dict.
+
+The items() method will return each item in a dictionary, as tuples in a list.
+The update() method will update the dictionary with the items from the given argument.
+dict.update({"key": value})
+The pop() method removes the item with the specified key name.
+The popitem() method removes the last inserted item (in versions before 3.7, a random item is removed instead):
+The del keyword removes the item with the specified key name. If no key is given, entire dictionary will be deleted.
+clear() empties the dictionary.
+A way to print all items in dictionary
+for x, y in thisdict.items():
+  print(x, y)
+  
+
+Methods:
+clear()	Removes all the elements from the dictionary
+copy()	Returns a copy of the dictionary
+fromkeys()	Returns a dictionary with the specified keys and value
+get()	Returns the value of the specified key
+items()	Returns a list containing a tuple for each key value pair
+keys()	Returns a list containing the dictionary's keys
+pop()	Removes the element with the specified key
+popitem()	Removes the last inserted key-value pair
+setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	Updates the dictionary with the specified key-value pairs
+values()	Returns a list of all the values in the dictionary
+sorted(iterable, key=key, reverse=reverse) - sorts
+
+Merge multiple into one:
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+dic4 = {}
+for d in (dic1, dic2, dic3):
+    dic4.update(d)
+print(dic4)
+Using for loop to iterate over dicts and update it to new dict.
