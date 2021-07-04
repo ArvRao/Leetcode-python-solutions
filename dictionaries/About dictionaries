@@ -38,3 +38,4 @@ for d in (dic1, dic2, dic3):
     dic4.update(d)
 print(dic4)
 Using for loop to iterate over dicts and update it to new dict.
+* These are typically used for storing values.
