@@ -3,6 +3,11 @@ get() method also gives same result.
 keys() gives all the keys of dict.
 values() gives all values of dict.
 
+Add two dicts:
+x = {'Superman':'Metropolis'}
+y={'Batman':'Gotham'}
+z={**x,**y} # {'Superman':'Metropolis','Batman':'Gotham'}
+
 The items() method will return each item in a dictionary, as tuples in a list.
 The update() method will update the dictionary with the items from the given argument.
 dict.update({"key": value})
