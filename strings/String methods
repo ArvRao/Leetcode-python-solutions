@@ -1,5 +1,16 @@
 This folder has problems related to string concept.
 
+def func(x,y,z):
+    return x*y*z
+
+print(func(**{'x':5,'y':5,'z':5}))
+OR
+print(func(*[5,5,5]))
+output: 125
+uses unpackaging
+
+extended unpacking: a,b,*c = [1,2,3,4,5,6]
+
 Various string methods:
 capitalize()	Converts the first character to upper case
 casefold()	Converts string into lower case
