@@ -1,0 +1,16 @@
+We need to check in a given sentence(string) whether all the letters are present.
+Use of sets or dictionary is optimal since it contains unique letters.
+If length of sentence is 26, it means all letters are present
+
+class Solution(object):
+    def checkIfPangram(self, s):
+        return len(set(s)) == 26
+
+
+def checkIfPangram(self, s):
+        d={}
+        for i in s:
+            d[i]=i
+        if len(d)==26:
+            return True
+        return False
