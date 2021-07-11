@@ -1,0 +1,35 @@
+myset = {"apple", "banana", "cherry"}
+
+Sets are used to store multiple items in a single variable.
+
+Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Tuple, and Dictionary, all with different qualities and usage.
+
+A set is a collection which is both unordered and unindexed.
+
+
+
+Add items: set.add(element)
+Add sets: set.update(another set or any iterable object(tuples, lists, dictionaries, string))
+Remove items: .remove/discard(element)    
+discard will not raise errors
+
+We can pop the last element using pop() method
+
+clear() empties the set
+
+del set_name deletes the set completely.
+
+
+Join two sets- set1.union(set2)
+Insert set2 elements into set1- set1.update(set2)
+
+
+The intersection_update() method will keep only the items that are present in both sets.
+The symmetric_difference_update() method will keep only the elements that are NOT present in both sets.
+This is exact opposite of intersection_update()
+
+copy()	Returns a copy of the set
+difference()	Returns a set containing the difference between two or more sets
+isdisjoint()	Returns whether two sets have a intersection or not
+issubset()	Returns whether another set contains this set or not
+issuperset()	Returns whether this set contains another set or not
