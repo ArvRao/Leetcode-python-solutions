@@ -1,0 +1,16 @@
+The starting and destination cities are appeared only once.
+
+Given a list of lists containing starting and ending cities, we need to find the destination city.
+First item is starting and second item means the ending city. The destination city has no starting item.
+
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        
+        end = set([path[1] for path in paths])
+        start = set([path[0] for path in paths])
+        destination = end - start
+        return list(destination)[0]
+
+print(destCity([["B","C"],["D","B"],["C","A"]]))      # returns A
+
+end-start removes all overalpping cities and only has destination city. Convert it back to list to access element.
