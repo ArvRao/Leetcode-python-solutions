@@ -33,12 +33,9 @@ class Solution:
 		return cur_max
     
 OR
-
+def maximumWealth(self, accounts: List[List[int]]) -> int:
         max_wealth = 0
-        for customer in accounts:
-            customer_wealth =0 
-            for wealth in customer:
-                customer_wealth +=wealth
-                if customer_wealth > max_wealth:
-                    max_wealth =  customer_wealth
+        for i in range(len(accounts)):
+            total_wealth = sum(accounts[i])
+            max_wealth = max(max_wealth, total_wealth)
         return max_wealth
