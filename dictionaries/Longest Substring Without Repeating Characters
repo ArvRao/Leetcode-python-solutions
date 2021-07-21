@@ -1,0 +1,67 @@
+Given a string s, find the length of the longest substring without repeating characters.
+
+ 
+
+Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+Example 4:
+
+Input: s = ""
+Output: 0
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+        current = ''
+        max_len = 0
+        for idx in range(len(s)):
+            if s[idx] not in current:
+                current += s[idx]
+            else:
+                if current[0] == s[idx]:
+                    current = current[1:]
+                    current += s[idx]
+                else:
+                    max_len = len(current) if len(current) > max_len else max_len
+                    ix = current.index(s[idx])
+                    current = current[ix+1:]
+                    current += s[idx]
+        else:
+            max_len = len(current) if len(current) > max_len else max_len
+        return max_len
+        
+   ##############
+class Solution:
+	def lengthOfLongestSubstring(self, s: str) -> int:
+		max_len = 0
+
+		#holds the current non repeating substring
+		passed = []
+
+		for i in range(len(s)):
+			if s[i] not in passed:
+				passed.append(s[i])
+				max_len = max(len(passed), max_len)
+			else:
+				#if repeat found, update max_len with current substr in passed
+				max_len = max(len(passed), max_len)
+
+				#begin the next substr after the first char in s that is repeated
+				passed = passed[passed.index(s[i])+1:] + [s[i]]
+
+		return max_len
