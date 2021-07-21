@@ -1,0 +1,87 @@
+Given a pattern and a string s, find if s follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
+
+ 
+
+Example 1:
+
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
+Example 2:
+
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
+Example 3:
+
+Input: pattern = "aaaa", s = "dog cat cat dog"
+Output: false
+Example 4:
+
+Input: pattern = "abba", s = "dog dog dog dog"
+Output: false
+
+
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        
+
+        mapping, seen, s = {}, set(), s.split()
+
+        # An edge case
+        if len(s) != len(pattern):
+            return False
+
+        for idx, word in enumerate(s):
+            c = pattern[idx]
+
+            if word in mapping and mapping[word] != c:
+                return False
+
+            if word in mapping and mapping[word] == c:
+                continue
+
+            if word not in mapping and c not in seen:
+                mapping[word] = c
+                seen.add(c)
+                continue
+
+            return False
+
+        return True
+        
+##################
+def wordPattern(self, pattern: str, s: str) -> bool:
+        dictionary = {}
+        length = len(pattern)
+        s = s.split()
+        if length != len(s):
+            return False
+        else:
+            for i in range(length):
+                if pattern[i] in dictionary:
+                    if dictionary[pattern[i]] != s[i]:
+                        return False
+                else:
+                    dictionary[pattern[i]] = s[i]
+
+            s = []
+            for key, value in dictionary.items():
+                if value in s:
+                    return False
+                else:
+                    s.append(value)
+
+            return True
+#################
+def wordPattern(self, pattern: str, s: str) -> bool:
+    s=s.split(' ')
+    if len(s)!=len(pattern):
+        return False
+    d={}
+    for i in range(len(s)):
+        if s[i] not in d :
+            d[s[i]]=pattern[i]
+        elif d[s[i]]!=pattern[i]:
+            return False
+    return len(set(pattern))==len(set(d.keys()))
