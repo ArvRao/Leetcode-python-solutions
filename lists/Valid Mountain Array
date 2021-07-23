@@ -20,3 +20,43 @@ Example 3:
 
 Input: arr = [0,3,2,1]
 Output: true
+
+
+class Solution:
+    def validMountainArray(self, arr: List[int]) -> bool:
+        checked = False # Variable used to check the summit of the mountain 
+        if len(arr) < 3 or arr[0] > arr[1]: # Pre-conditions , if the len(arr) < 3 or if arr[0] > arr[1] meaning that we're decreasing from the beginning which is not allowed
+            return False
+        for i in range(len(arr)-1): # Iterate through the array 
+            if not checked and not arr[i] < arr[i+1]: # Check for the summit of the mountain and if we're increasing
+                checked = True
+            if checked and not (arr[i] > arr[i+1]): # Check if after the summit we're decreasing
+                return False
+            if not checked and i == len(arr)-2: # Check if the array only increase
+                return False
+        return True
+        
+  ###########
+def validMountainArray(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        n = len(arr)
+        if n < 3 or arr[0] >= arr[1]:
+            return False
+        
+        breakpoint = -1  
+        for i in range(n-1):
+            if arr[i] >= arr[i+1]:
+                breakpoint = i
+                break
+        
+        if breakpoint == -1:
+            return False
+        
+        for i in range(breakpoint+1, n):
+            if arr[i] >= arr[i-1]:
+                return False
+        
+        return True
