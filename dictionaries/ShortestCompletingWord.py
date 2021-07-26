@@ -18,6 +18,7 @@ Explanation: licensePlate contains letters 's', 'p', 's' (ignoring case), and 't
 "stripe" is missing an 's'.
 "stepple" is missing an 's'.
 Since "steps" is the only word containing all the letters, that is the answer.
+
 Example 2:
 
 Input: licensePlate = "1s3 456", words = ["looks","pest","stew","show"]
@@ -27,15 +28,15 @@ Example 3:
 
 Input: licensePlate = "Ah71752", words = ["suggest","letter","of","husband","easy","education","drug","prevent","writer","old"]
 Output: "husband"
-Example 4:
 
+Example 4:
 Input: licensePlate = "OgEu755", words = ["enough","these","play","wide","wonder","box","arrive","money","tax","thus"]
 Output: "enough"
+	
 Example 5:
 
 Input: licensePlate = "iMSlpe4", words = ["claim","consumer","student","camera","public","never","wonder","simple","thought","use"]
 Output: "simple"
-
 
 def shortestCompletingWord(self, licensePlate, words):
         licensePlate=licensePlate.lower()
@@ -91,6 +92,7 @@ class Solution:
                         # print(count)
                         if count==0:
                             return word
+		
 Explanation :
 Step 1: I create a dictionary for the original License plate, and add only those "i" in the dictionary that are alpha (NOT alnum - also adds numbers). I convert the alphabets into lower case using .lower().
 Step 2 : I sort the words array in the increasing order of length (See Example 2 in the given testcases).
