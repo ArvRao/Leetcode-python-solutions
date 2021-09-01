@@ -1,12 +1,14 @@
 Lists are used to store multiple items in a single variable.
 
-They are changeable and indexed, highly used.
+They are changeable/mutable and indexed, highly used.
 
 Add elements:
 append to end of list: list.append(element)
-insert elements: list.insert(index, element)
-Extend list: Append elements from another list to the current list
-
+insert elements at any index: list.insert(index, element)
+Extend list: Append elements from another list to the current list. 
+Syntax:
+list.extend(iterable)
+iterable-set, tuple, list, etc.
 
 Removing element at particular index: del list[index]
 list.pop(index)
@@ -15,7 +17,8 @@ Remove by value: list.remove(element name)
 Change range of values:
 thislist[1:3] = ["blackcurrant", "watermelon"]
 
-clear() - empties the list
+clear() - empties/removes all elements in list
+list.clear()
 
 List comprehension-creates list by looping through lists
 newlist = [expression for item in iterable if condition == True]
@@ -25,6 +28,8 @@ Sort:
 List objects have a sort() method that will sort the list alphanumerically, ascending, by default:
 reverse = True for descending order
 Customize your sort own function by using the keyword argument key = function.
+
+
 
 Statistics with list of numbers:
 min(digits)
@@ -37,11 +42,11 @@ Method	Description
 append()	Adds an element at the end of the list
 clear()	Removes all the elements from the list
 copy()	Returns a copy of the list
-count()	Returns the number of elements with the specified value
+count()	Returns the number of elements with the specified value. Inside the count must be specific elements.
 extend()	Add the elements of a list (or any iterable), to the end of the current list
 index()	Returns the index of the first element with the specified value
 insert()	Adds an element at the specified position
 pop()	Removes the element at the specified position
-remove()	Removes the item with the specified value
+remove()	Removes the item with the specified value. Value must be the argument inside remove()
 reverse()	Reverses the order of the list
 sort()	Sorts the list
