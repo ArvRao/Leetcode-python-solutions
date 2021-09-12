@@ -22,8 +22,8 @@ class Solution:
 
 other way:
 runningSum = 0
-        for i in range(0,len(nums)):
-            runningSum += nums[i]  
-            nums[i] = runningSum    # runningSum has value of previous number
+for i in range(0,len(nums)):
+    runningSum += nums[i]
+    nums[i] = runningSum    # runningSum has value of previous number
  # give value of sum of exact number with previous number to nums[i] 
-        return nums
+    return nums
