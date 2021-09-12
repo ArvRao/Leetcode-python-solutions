@@ -22,3 +22,15 @@ class Solution:
 OR
 
 return nums*2
+
+### OTHER WAY ###
+def getConcatenation(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        new_list = []
+        for i in range(0,2*n): 
+            if i<n:
+                new_list.append(nums[i])
+            else:
+                new_list.append(nums[i-n])
+        return new_list
+        
