@@ -27,3 +27,12 @@ for i in range(0,len(nums)):
     nums[i] = runningSum    # runningSum has value of previous number
  # give value of sum of exact number with previous number to nums[i] 
     return nums
+
+
+other way around:
+result = []
+total = 0
+for i in range(len(nums)):
+ total += nums[i]
+ result.append(total)
+return result
