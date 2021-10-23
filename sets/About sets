@@ -21,6 +21,7 @@ del set_name deletes the set completely.
 
 
 Join two sets- set1.union(set2)
+Find common elements: set1.intersection(set2)
 Insert set2 elements into set1- set1.update(set2)
 
 
