@@ -3,6 +3,8 @@ This folder has problems related to string concept.
 def func(x,y,z):
     return x*y*z
 
+** for unpacking dict an * for a list
+
 print(func(**{'x':5,'y':5,'z':5}))
 OR
 print(func(*[5,5,5]))
